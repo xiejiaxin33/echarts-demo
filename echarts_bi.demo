@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+    <meta charset="utf-8">
+    <title>2025 年度业务数据趋势</title>
+</head>
+<body style="height: 100%; margin: 0">
+    <div id="main" style="height: 100%"></div>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+    <script type="text/javascript">
+        var chartDom = document.getElementById('main');
+        var myChart = echarts.init(chartDom);
+        var option;
+
+        option = {
+            title: {
+                text: '2025 年度业务数据趋势'
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data: ['销售额', '利润']
+            },
+            toolbox: {
+                feature: {
+                    saveAsImage: {}
+                }
+            },
+            xAxis: {
+                type: 'category',
+                data: ['1月', '2月', '3月', '4月', '5月', '6月']
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [
+                {
+                    name: '销售额',
+                    type: 'bar',
+                    data: [120, 150, 180, 130, 170, 200]
+                },
+                {
+                    name: '利润',
+                    type: 'line',
+                    data: [30, 50, 45, 60, 55, 65]
+                }
+            ]
+        };
+
+        option && myChart.setOption(option);
+    </script>
+</body>
+</html>
